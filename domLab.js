@@ -51,15 +51,17 @@ menuLinks.forEach((arr, i)=>{
     topMenuEl.appendChild(aTag)
 })
 
+/* Task 4.0 - Select and cache the <nav id="sub-menu">element in a variable named subMenuEl. */
+const subMenuEl = document.querySelector('#sub-menu')
 
+/* Task 4.1 - Set the height subMenuElelement to be 100%. */
+subMenuEl.style.height = '100%'
 
+/* Task 4.2 - Set the background color of subMenuElto the value stored in the --sub-menu-bgCSS custom property. */
+subMenuEl.style.backgroundColor = '#3da4ab'
 
-
-
-
-
-
-
+/* Task 4.3 - Add the class of flex-aroundto the subMenuElelement. */
+subMenuEl.className = 'flex-around'
 
 
 
