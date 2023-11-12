@@ -80,6 +80,60 @@ subMenuEl.style.position = 'absolute'
 /* Task 4.5 - Set the CSS top property of subMenuElto the value of 0. */
 subMenuEl.style.top = '0'
 
+/* Task 5.1
+    Select and cache the all of the <a>elements inside of topMenuEl in a variable named topMenuLinks.
+    Declare a global showingSubMenu variable and initialize it to false; */
+
+let topMenuLinks
+
+menuLinks.forEach((arr, i)=>{
+    const aTag = document.createElement('a')
+    const link = document.createTextNode(menuLinks[i].text)
+    aTag.appendChild(link)
+    aTag.href = menuLinks[i].href
+    topMenuLinks = aTag.href
+    // topMenuEl.appendChild(aTag)
+})
+
+const showingSubMenu = false
+
+/* Task 5.2
+    - Attach a delegated 'click' event listener to topMenuEl.
+    - The first line of code of the event listener function should call the event object's preventDefault() method.
+    - The second line of code function should immediately return if the element clicked was not an <a>element.
+    - console.log the content of the <a>to verify the handler is working. */
+
+topMenuEl.addEventListener('click', (event) =>{
+    event.preventDefault()
+    if(topMenuLinks == 'clicked') return
+    console.log('a')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
