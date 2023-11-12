@@ -5,21 +5,23 @@
 // Menu data structure
 var menuLinks = [
     {text: 'about', href: '/about'},
-  {text: 'catalog', href: '#', subLinks: [
-    {text: 'all', href: '/catalog/all'},
-    {text: 'top selling', href: '/catalog/top'},
-    {text: 'search', href: '/catalog/search'},
-  ]},
-  {text: 'orders', href: '#' , subLinks: [
-    {text: 'new', href: '/orders/new'},
-    {text: 'pending', href: '/orders/pending'},
-    {text: 'history', href: '/orders/history'},
-  ]},
-  {text: 'account', href: '#', subLinks: [
-    {text: 'profile', href: '/account/profile'},
-    {text: 'sign out', href: '/account/signout'},
-  ]},
+    {text: 'catalog', href: '#', subLinks: [
+        {text: 'all', href: '/catalog/all'},
+        {text: 'top selling', href: '/catalog/top'},
+        {text: 'search', href: '/catalog/search'},
+    ]},
+    {text: 'orders', href: '#' , subLinks: [
+        {text: 'new', href: '/orders/new'},
+        {text: 'pending', href: '/orders/pending'},
+        {text: 'history', href: '/orders/history'},
+    ]},
+    {text: 'account', href: '#', subLinks: [
+        {text: 'profile', href: '/account/profile'},
+        {text: 'sign out', href: '/account/signout'},
+    ]},
   ];
+
+// console.log(menuLinks[2])
 
 const body = document.querySelector('body')
 /* Task 1.0 - Select and cache the <main>element in a variable named mainEl. */
@@ -77,25 +79,40 @@ subMenuEl.className = 'flex-around'
 /* Task 4.4 - Set the CSS position property of subMenuEl to the value of absolute. */
 subMenuEl.style.position = 'absolute'
 
-/* Task 4.5 - Set the CSS top property of subMenuElto the value of 0. */
-subMenuEl.style.top = '0'
+/* Task 4.5 - Set the CSS top property of subMenuEl to the value of 0. */
+// subMenuEl.style.top = '0px'
 
 /* Task 5.1
-    Select and cache the all of the <a>elements inside of topMenuEl in a variable named topMenuLinks.
+    Select and cache the all of the <a> elements inside of topMenuEl in a variable named topMenuLinks.
     Declare a global showingSubMenu variable and initialize it to false; */
 
-let topMenuLinks
+let topMenuLinks = []
 
 menuLinks.forEach((arr, i)=>{
     const aTag = document.createElement('a')
     const link = document.createTextNode(menuLinks[i].text)
-    aTag.appendChild(link)
-    aTag.href = menuLinks[i].href
-    topMenuLinks = aTag.href
-    // topMenuEl.appendChild(aTag)
+    // aTag.appendChild(link)
+    // aTag.href = menuLinks[i].href[i]
+    // topMenuLinks = aTag.href
+    // // subMenuEl.appendChild(aTag)
+    // console.log(topMenuLinks)
+    
+    for(let i=0; i<menuLinks.length; i++){
+        let anotherArr =[]
+        for(let j=0; j<menuLinks[i].length; j++){
+            anotherArr.push()
+        }
+
+        topMenuLinks.push(anotherArr)
+    }
 })
 
-const showingSubMenu = false
+console.log(topMenuLinks)
+let showingSubMenu = false
+
+
+
+
 
 /* Task 5.2
     - Attach a delegated 'click' event listener to topMenuEl.
@@ -103,9 +120,16 @@ const showingSubMenu = false
     - The second line of code function should immediately return if the element clicked was not an <a>element.
     - console.log the content of the <a>to verify the handler is working. */
 
+/* Task 5.3 - Next in the event listener, if the clicked <a>link has a class of active:
+    - Remove the activeclass from the clicked <a> element.
+    - Set the showingSubMenu to false.
+    - Set the CSS topproperty of subMenuElto 0.
+    - return to exit the handler. */
+
 topMenuEl.addEventListener('click', (event) =>{
     event.preventDefault()
     if(topMenuLinks == 'clicked') return
+    // if(topMenuLinks == 'clicked')  return
     console.log('a')
 })
 
