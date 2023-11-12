@@ -126,13 +126,22 @@ let showingSubMenu = false
     - Set the CSS topproperty of subMenuElto 0.
     - return to exit the handler. */
 
+/* Task 5.4 - Next, the event listener should remove a class name of activefrom each <a>element in topMenuLinks- whether the activeclass exists or not.
+    Hint: Removing a non-existent class from an element does not cause an error, so just remove it! */
+
+/* Task 5.5 -Next, the event listener should add a class name of activeto the <a>element that was clicked. */
+
 topMenuEl.addEventListener('click', (event) =>{
     event.preventDefault()
     if(topMenuLinks == 'clicked') return
-    // if(topMenuLinks == 'clicked')  return
-    console.log('a')
-})
+    if(document.querySelector('a').contains('active')) document.querySelector('a').classList.remove('active')
+    showingSubMenu = false
+    subMenuEl.style.top = '0px'
+    topMenuLinks.classList.remove('active')
 
+    
+    return
+})
 
 
 
